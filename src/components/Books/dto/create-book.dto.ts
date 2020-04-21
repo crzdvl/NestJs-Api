@@ -4,10 +4,6 @@ export class CreateBookDto {
 
     @IsNotEmpty()	
     @IsString()
-    blogpost: string;
-    
-    @IsNotEmpty()	
-    @IsString()
     firstName: string;
     
     @IsNotEmpty()	
