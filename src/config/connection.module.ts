@@ -1,7 +1,13 @@
 import { Module } from '@nestjs/common';
-import { MongooseModule } from '@nestjs/mongoose';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
-    imports: [MongooseModule.forRoot('mongodb+srv://crzdvl:WynxZtwF@cluster0-fnvr2.mongodb.net/ApiDB?retryWrites=true&w=majority')],
+    imports: [TypeOrmModule.forRoot({
+        type: 'mongodb',
+        url: 'mongodb+srv://crzdvl:WynxZtwF@cluster0-fnvr2.mongodb.net/ApiDB?retryWrites=true&w=majority',
+        useUnifiedTopology: true,
+        useNewUrlParser: true,
+        entities: ["dist/**/*.entity{.ts,.js}"],
+    })],
 })
 export class DBModule {}

@@ -1,23 +1,27 @@
-import { IsString, IsArray, IsNotEmpty } from 'class-validator';
+import { IsString, IsNotEmpty, IsEmail, IsMobilePhone, IsBooleanString } from 'class-validator';
 
 export class CreateUserDto {
 
     @IsNotEmpty()	
     @IsString()
-    blogpost: string;
-
+    firstName: string;
+    
     @IsNotEmpty()	
     @IsString()
-    title: string;
-
+    lastName: string;
+    
     @IsNotEmpty()	
-    @IsString()
-    author: string;
-
+    @IsEmail()
+    email: string;
+    
     @IsNotEmpty()	
-    @IsArray()	
-    published: Array <{
-        publisher: string;
-        year: number;
-        }>;
+    @IsMobilePhone()
+    phone: number;
+    
+    @IsNotEmpty()	
+    @IsBooleanString()	
+    isAdmin: boolean;
+    
+    @IsBooleanString()
+    verified: boolean;
 }

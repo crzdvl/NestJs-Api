@@ -1,27 +1,23 @@
-import { IsString, IsEmail, IsMobilePhone, IsBooleanString, IsNotEmpty } from 'class-validator';
+import { IsString, IsArray, IsNotEmpty } from 'class-validator';
 
 export class CreateBookDto {
 
     @IsNotEmpty()	
     @IsString()
-    firstName: string;
-    
+    blogpost: string;
+
     @IsNotEmpty()	
     @IsString()
-    lastName: string;
-    
+    title: string;
+
     @IsNotEmpty()	
-    @IsEmail()
-    email: string;
-    
+    @IsString()
+    author: string;
+
     @IsNotEmpty()	
-    @IsMobilePhone()
-    phone: number;
-    
-    @IsNotEmpty()	
-    @IsBooleanString()	
-    isAdmin: boolean;
-    
-    @IsBooleanString()
-    verified: boolean;
+    @IsArray()	
+    published: Array <{
+        publisher: string;
+        year: number;
+        }>;
 }
