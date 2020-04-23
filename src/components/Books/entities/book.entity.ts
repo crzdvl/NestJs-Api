@@ -1,4 +1,5 @@
 import { Entity, Column, ObjectIdColumn, ObjectID} from 'typeorm';
+import { CreateBookPublishedDto } from '../dto/create-book.dto'
 
 @Entity({ name: 'books' })
 export class BookEntity {
@@ -16,8 +17,5 @@ export class BookEntity {
     author: string;
 
     @Column()
-    published: Array <{
-        publisher: string;
-        year: number;
-        }>;
+    published: CreateBookPublishedDto;
 }

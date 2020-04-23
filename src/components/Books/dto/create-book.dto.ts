@@ -1,4 +1,14 @@
-import { IsString, IsArray, IsNotEmpty } from 'class-validator';
+import { IsString, IsNumber, IsObject, IsNotEmpty } from 'class-validator';
+
+export class CreateBookPublishedDto {
+    @IsNotEmpty()
+    @IsString()
+    readonly publisher: string;
+
+    @IsNotEmpty()
+    @IsNumber()
+    readonly year: number;
+}
 
 export class CreateBookDto {
 
@@ -15,9 +25,7 @@ export class CreateBookDto {
     author: string;
 
     @IsNotEmpty()	
-    @IsArray()	
-    published: Array <{
-        publisher: string;
-        year: number;
-        }>;
+    @IsObject()
+    published: CreateBookPublishedDto;
+
 }
