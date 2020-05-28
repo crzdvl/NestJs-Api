@@ -30,7 +30,7 @@
     "class-transformer": "^0.2.3",
     "class-validator": "^0.12.1",
     "commitizen": "^4.0.4",
-    "heroku": "^7.39.3",
+    "heroku": "^7.40.0",
     "mongoose": "^5.9.9",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
