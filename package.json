@@ -29,7 +29,7 @@
     "@types/mongoose": "^5.7.12",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.12.1",
-    "commitizen": "^4.0.4",
+    "commitizen": "^4.2.4",
     "heroku": "^7.39.3",
     "mongoose": "^5.9.9",
     "reflect-metadata": "^0.1.13",
